@@ -24,6 +24,10 @@ def one_movie():
 
     coun = soup_2.find('span', class_='trailer_year').text[7:]
     ganre = soup_2.find('span', class_='filmInfo_genreItem button-main').text
-    discr = unicodedata.normalize("NFKD", soup_2.find('div', class_='js-active').text).replace("\n", "").replace("\t", "").replace('Развернуть', '')
+    discr = unicodedata.normalize("NFKD", soup_2.find('div', class_='js-active').text).replace("\n", "").\
+        replace("\t", "").replace('Развернуть', '')
 
     return name, rating, coun, ganre, discr
+
+
+one_movie()

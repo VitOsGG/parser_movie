@@ -16,7 +16,6 @@ def all_movie():
         soup_3 = BeautifulSoup(r_3.text, 'lxml')
 
         pict = soup_3.find('a', class_='filmInfo_posterLink').get('href')
-
         img_data = requests.get(pict, verify=False).content
         with open(f'afisha_movie/{afisha_number}.jpg', 'wb') as handler:
             handler.write(img_data)
